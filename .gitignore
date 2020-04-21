@@ -2,3 +2,4 @@ node_modules/
 songs/
 .cache/
 dist/
+server/songs
