@@ -2,9 +2,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 const fs = require("fs");
+const cors = require('cors');
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
+app.use(cors())
 app.use(express.static('songs'))
 
 app.get('/music/:fileName', (req,res)=>{
@@ -33,7 +35,7 @@ app.get('/audio/:fileName', (req, res)=>{
             'Content-Range': `bytes ${start}-${end}/${fileSize}`,
             'Accept-Ranges': 'bytes',
             'Content-Length': chunksize,
-            'Content-Type': 'video/mp4',
+            'Content-Type': 'audio/mp3',
             }
         
         res.writeHead(206, head)

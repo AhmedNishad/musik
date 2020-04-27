@@ -17,11 +17,9 @@ class TrackList extends Component {
     }
 
   render() { 
-    let trackId = 0;
     let tracks = this.state.tracks.map((t:Track) => {
-      trackId++;
       return (
-      <TrackElem key={trackId} track={t} />
+      <TrackElem key={t.id} track={t} />
      )
     });
 

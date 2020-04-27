@@ -1,4 +1,5 @@
 import Artist from './artist';
+import { v1 as uuidv1 } from 'uuid';
 
 export default class Track{
     name;
@@ -7,6 +8,7 @@ export default class Track{
     imgUrl;
     artist: Artist;
     releaseYear;
+    id;
     
     constructor(name, description, artist, releaseYear, songUrl, imgUrl){
         this.name = name;
@@ -15,6 +17,7 @@ export default class Track{
         this.songUrl = songUrl;
         this.imgUrl = imgUrl;
         this.releaseYear = releaseYear;
+        this.id = uuidv1();
     }
 
 
